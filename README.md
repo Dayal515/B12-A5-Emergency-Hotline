@@ -1,42 +1,38 @@
 ﻿# B12-A5-Emergency-Hotline
  1. DOM selection methods
-    a. getElementById()
-        i. used to select only one element by id
-        ii. return one value or null
-        iii. fastest becouse it work for one unique id
-    b. getElementByClassName()
-        i. used to selects all elements with a given class
-        ii. return html collection
-        iii.need loop to access individual items
-    c. querySelector()
-        i.used to selects the first element that matches a CSS selector
-        ii. return a single element
-        iii. very flexible
-    d. querySelectorAll()
-        i.to select all element that matches a css selector
-        ii. return static NodeList
+    * getElementById()
+        * used to select only one element by id
+        * return one value or null
+        * fastest becouse it work for one unique id
+    * getElementByClassName()
+        * used to selects all elements with a given class
+        * return html collection
+        * need loop to access individual items
+    * querySelector()
+        * used to selects the first element that matches a CSS selector
+        * return a single element
+        * very flexible
+    * querySelectorAll()
+        * to select all element that matches a css selector
+        * return static NodeList
 2. How to create and insert a new element to DOM
-   step 1: create the element by createElement()
-       ex: const newElement = document.createElement("p");
-   step 2: add content/attributes by textContent/innerHTML/innerText/setAttribute()
-       ex: newElement.innerText = 'Programming Hero';
-   step 3: insert into DOM by
-             appendChild -> add to the last
-             prepend -> add to the first
-             before -> add before an element
-             after -> add after an element
-             replaceWith -> replace for another element
-       ex: document.body.appendChild(newElement);
+   * step 1: create the element by createElement()
+       * ex: const newElement = document.createElement("p");
+   * step 2: add content/attributes by textContent/innerHTML/innerText/setAttribute()
+       * ex: newElement.innerText = 'Programming Hero';
+   * step 3: insert into DOM by appendChild, prepend, before, after, replaceWith
+       * ex: document.body.appendChild(newElement);
 3. Event bubbling
------>it is a DOM event propagation mechanism where an event starts from the target element (the element that triggered the event) and then bubbles up through its ancestors (child ->parent ->grandparent -> ... ->document).
------> work process: Event triggers at the target.Than, event moves upward through ancestors until it reaches document. Unless stopped, all matching handlers will execute. We can stop it using event.stopPropagation();
+   * Event bubbling is a DOM event propagation mechanism where an event starts from the target element (the element that triggered the event) and then bubbles up through its ancestors (child ->parent ->grandparent -> ... ->document).
+   * working process: Event triggers at the target.Than, event moves upward through ancestors until it reaches document. Unless stopped, all matching handlers will execute. We can stop it using event.stopPropagation();
 4. Event Delegation
------>it is a technique in JavaScript where instead of adding event listeners to multiple child elements, you add a single event listener to their parent and use event bubbling to detect which child triggered the event. Useful for dynamic content, performance, and cleaner code.
+   * Event Delegation is a technique in JavaScript where instead of adding event listeners to multiple child elements, you add a single event listener to their parent and use event bubbling to detect which child triggered the event. Useful for dynamic content, performance, and cleaner code.
 5. preventDefault() vs stopPropagation()
-   preventDefault() ---> Don't do the browser's default behavior.
-   stopPropagation() ---> Don't let the event bubble up to parents.
+   * preventDefault() ---> Don't do the browser's default behavior.
+   * stopPropagation() ---> Don't let the event bubble up to parents.
 
 
 
    
        
+

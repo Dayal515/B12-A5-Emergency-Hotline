@@ -54,6 +54,23 @@ document.addEventListener("DOMContentLoaded", () => {
   clearBtn.addEventListener("click", () => {
     callHistory.innerHTML = ""; // remove all li items
   });
+
+
+  // copy button function
+  const copyEl = document.getElementById("copy");
+  let copies = Number(copyEl.innerText) || 0;
+  // get copy btn
+  const copyBtns = document.querySelectorAll(".copy-btn");
+  copyBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".service-card");
+      const serviceNumber = card.querySelector(".info h2").innerText;
+      // copy on clipboard
+      navigator.clipboard.writeText(serviceNumber).then(() => {
+        alert(`Copied Number - ${serviceNumber}`);
+        copies++;
+        copyEl.innerText = copies;
+      })
+    });
+  });
 });
-
-
